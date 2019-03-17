@@ -25,7 +25,7 @@ int main(){
   switch (op){
     case 1:insert(insert);
     break;
-    case 2:
+    case 2:print_queue(print_queue);
     break;
     case 3:
     break;
@@ -59,6 +59,23 @@ insert(data_structure**List){
     chain -> next = entrance;
     entrance = chain;
     EnterData();
+  }
+
+}
+
+print_queue(data_structure**List){
+  if(entrance == NULL){
+    printf("\n\n-----Queue is empty-----\n\n");
+  }else{
+    chain = entrance;
+    printf("\n\n-----Entrance zone-----\n");
+    while(chain -> next != NULL){
+      printf("\n%i", chain -> num);
+      chain = chain -> next;
+    }printf("\n%i\n\n", chain -> num);
+    printf("-----Exit zone-----\n");
+
+    chain = entrance;
   }
 
 }
